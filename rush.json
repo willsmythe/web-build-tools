@@ -220,10 +220,7 @@
       "packageName": "@microsoft/ts-command-line",
       "projectFolder": "libraries/ts-command-line",
       "reviewCategory": "libraries",
-      "shouldPublish": true,
-      "cyclicDependencyProjects": [
-        "@microsoft/node-library-build"
-      ]
+      "shouldPublish": true
     },
 
     // "stack" folder (alphabetical order)
