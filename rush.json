@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
 
   "rushVersion": "5.0.3",
-  "pnpmVersion": "2.13.5",
+  "pnpmVersion": "2.13.6",
   "nodeSupportedVersionRange": ">=6.9.0 <7.0.0 || >=8.9.4 <9.0.0",
 
   "projectFolderMinDepth": 2,
@@ -220,10 +220,7 @@
       "packageName": "@microsoft/ts-command-line",
       "projectFolder": "libraries/ts-command-line",
       "reviewCategory": "libraries",
-      "shouldPublish": true,
-      "cyclicDependencyProjects": [
-        "@microsoft/node-library-build"
-      ]
+      "shouldPublish": true
     },
 
     // "stack" folder (alphabetical order)
