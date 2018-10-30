@@ -19,8 +19,10 @@ steps:
 
 - script: |
     git fetch origin master:refs/remotes/origin/master -a
-    COMMITTER_EMAIL="$(git log -1 --pretty=format:'%ae')"
-    git config user.email $COMMITTER_EMAIL
+
+    git config user.name "Test name"
+    git config user.email "test@users.noreply.github.com
+
     node common/scripts/install-run-rush.js change -v
     node common/scripts/install-run-rush.js check
     node common/scripts/install-run-rush.js install
