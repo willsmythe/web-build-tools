@@ -19,6 +19,8 @@ steps:
 
 - script: |
     git fetch origin master:refs/remotes/origin/master -a
+    COMMITTER_EMAIL="$(git log -1 --pretty=format:'%ae')"
+    git config user.email $COMMITTER_EMAIL
     node common/scripts/install-run-rush.js change -v
     node common/scripts/install-run-rush.js check
     node common/scripts/install-run-rush.js install
