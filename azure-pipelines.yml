@@ -21,7 +21,7 @@ steps:
     git fetch origin master:refs/remotes/origin/master -a
 
     git config user.name "Test name"
-    git config user.email "test@users.noreply.github.com
+    git config user.email "test@users.noreply.github.com"
 
     node common/scripts/install-run-rush.js change -v
     node common/scripts/install-run-rush.js check
