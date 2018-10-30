@@ -1,0 +1,25 @@
+# Azure Pipelines YAML configuration file. Builds on multiple versions of Node.
+#
+# To learn more visit https://docs.microsoft.com/azure/devops/pipelines/get-started
+
+job: Build
+strategy:
+  matrix:
+    Node8:
+      node.version: '8.9.4'
+    Node10:
+      node.version: '10.12.0'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '$(node.version)'
+  displayName: 'Install Node.js $(node.version)'
+
+- script: |
+    git fetch origin master:refs/remotes/origin/master -a
+    node common/scripts/install-run-rush.js change -v
+    node common/scripts/install-run-rush.js check
+    node common/scripts/install-run-rush.js install
+    node common/scripts/install-run-rush.js rebuild --verbose --production
+  displayName: 'Install dependencies'
