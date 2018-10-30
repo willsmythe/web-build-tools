@@ -2,7 +2,8 @@
 #
 # To learn more visit https://docs.microsoft.com/azure/devops/pipelines/get-started
 
-job: Build
+pool:
+  vmImage: 'Ubuntu-16.04'
 strategy:
   matrix:
     Node8:
@@ -22,4 +23,4 @@ steps:
     node common/scripts/install-run-rush.js check
     node common/scripts/install-run-rush.js install
     node common/scripts/install-run-rush.js rebuild --verbose --production
-  displayName: 'Install dependencies'
+  displayName: 'Build'
